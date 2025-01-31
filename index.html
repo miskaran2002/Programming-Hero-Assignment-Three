@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Hero Assignment-Three</title>
+
+    <!-- google font cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+
+    <!-- tailwind + daisyui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    keyframes: {
+                        rotateLoop: {
+                            '0%': { transform: 'rotate(0deg)', transformOrigin: 'center' },
+                            '25%': { transform: 'rotate(2deg)', transformOrigin: 'center' },
+                            '50%': { transform: 'rotate(-2deg)', transformOrigin: 'center' },
+                            '75%': { transform: 'rotate(2deg)', transformOrigin: 'center' },
+                            '100%': { transform: 'rotate(0deg)', transformOrigin: 'center' }
+                        }
+                    },
+                    animation: {
+                        'rotate-loop': 'rotateLoop 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite'
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- font awesome cdn -->
+    <script src="https://kit.fontawesome.com/54228bcac5.js" crossorigin="anonymous"></script>
+
+    <style>
+    .ADLaM-display-regular {
+     font-family: "ADLaM Display", serif;
+   
+    }
+
+
+    </style>
+
+</head>
+<body class="ADLaM-display-regular">
+  <!-- Header section -->
+   <main>
+    <!-- nav section -->
+     <nav>
+        <div class="navbar bg-orange-100 max-w-screen-xl mx-auto px-16 lg:px-26">
+            <div class="navbar-start flex sm:justify-start space-x-16">
+
+                <div class="gap-2 flex items-center order-1 sm:order-2">
+                    <img class="gap-2" src="c1-assets/logo-header.png" alt="">
+                    <a class="text-xl hidden lg:flex">Browse<span class="text-orange-400">4</span>Pets</a>
+                </div>
+
+
+                <div class="dropdown order-2 sm:order-1 ">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                     <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                         <li><a>Find a pet</a></li> 
+                        <li><a>Breeds</a></li> 
+                         <li><a>Contact Us</a></li>                         
+                        
+                     </ul> 
+                </div>
+
+               
+
+
+                
+              
+            </div>
+
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a>Find a pet</a></li>
+                    <li><a>Breeds</a></li>
+                    <li><a>Contact Us</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="navbar-end gap-2  hidden lg:flex">
+                <i class="fa-regular fa-bell"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <button class="btn btn-outline btn-warning text-white">Login</button>
+                <button class="btn btn-warning">Resister</button>
+               
+            </div>
+
+        </div>
+      
+     </nav>
+     <hr class="block md:hidden border-t-2 border-gray-400">
+
+     <!-- header section  -->
+    <div class="max-w-screen-xl mx-auto px-8 lg:px-28  flex flex-col ">
+        <!-- header text -->
+         
+            <div class="p-6  z-10 ">
+                <p class="text-xl md:text-6xl pt-8 animate-rotate-loop">
+                    Pamper Your Pet,<br> Because They Deserve <br> the Bes
+                </p>
+            
+                <p class="text-gray-500 text-sm md:2xl pt-6 pb-6  animate-rotate-loop">
+                    Discover a world of treats, toys, and essentials handpicked for <br> your furry friends. Shop now and make tails
+                    wag
+                    with
+                    joy!
+                </p>
+            
+                <button class="bg-yellow-400 mt-3 mb-3 px-2 py-2 rounded-lg">Find a Pet</button>
+            
+            </div>
+            
+            
+            <!-- header figure -->
+            <div class="relative bottom-[150px] md:bottom-[300px]">
+                <img src="c1-assets/cat-big.png" alt="">
+            
+            </div>
+
+        
+       
+
+
+    </div>
+
+
+    <!-- category -->
+     <div class="max-w-screen-xl  mx-auto px-16 lg:px-28 pt-0">
+        <h1 class="text-xl md:text-4xl pt-8">
+            Browse By Categories         
+        </h1> 
+
+        <!-- card -->
+         <div class="flex flex-wrap gap-2 justify-between md:flex-nowrap lg:flex-nowrap pt-20 pb-20">
+
+            <!-- card -->
+            <div class="bg-orange-300 px-8 py-8 rounded-lg justify-items-center">
+                <div>
+                    <img class="bg-white rounded-full px-4 py-4" src="c1-assets/dog-cartoon.png" alt="">
+                </div>
+                <p class="pt-2">Dog</p>
+                <p class=" text-sm">3 items</p>
+            </div>
+
+            <div class="bg-orange-300 px-8 py-8 rounded-lg justify-items-center">
+                <div>
+                    <img class="bg-white rounded-full px-4 py-4" src="c1-assets/fish-cartoon.png" alt="">
+                </div>
+                <p class="pt-2">Fish</p>
+                <p class="text-sm">3 items</p>
+            </div>
+
+            <div class="bg-orange-300 px-8 py-8 rounded-lg justify-items-center">
+                <div>
+                    <img class="bg-white rounded-full px-4 py-4" src="c1-assets/cat-cartoon.png" alt="">
+                </div>
+                <p class="pt-2">Cat</p>
+                <p class="text-sm">3 items</p>
+            </div>
+
+
+        
+            <div class="bg-orange-300 px-8 py-8 rounded-lg justify-items-center ">
+                <div>
+                    <img class="bg-white rounded-full px-4 py-4" src="c1-assets/bird-cartoon.png" alt="">
+                </div>
+                <p class="pt-2">Bird</p>
+                <p class="text-sm">3 items</p>
+            </div>
+
+
+            <div class="bg-orange-300 px-8 py-8 rounded-lg justify-items-center">
+                <div>
+                    <img class="bg-white rounded-full px-5 py-5" src="c1-assets/mouse-cartoon.png" alt="">
+                </div>
+                <p class="pt-2">Cat</p>
+                <p class="text-sm">3 items</p>
+            </div>
+            
+            
+            
+            <div class="bg-orange-300 px-8 py-8 rounded-lg justify-items-center ">
+                <div>
+                    <img class="bg-white rounded-full px-5 py-5" src="c1-assets/rabbit-cartoon.png" alt="">
+                </div>
+                <p class="pt-2">Bird</p>
+                <p class="text-sm">3 items</p>
+            </div>
+
+
+
+           
+            
+            
+           
+           
+
+
+            
+
+
+         </div>
+
+
+     </div>
+
+
+     <!-- pet products -->
+      <div class="max-w-screen-xl mx-auto px-16 lg:px-28 bg-orange-50 pb-24 pt-16">
+        <h1 class="text-xl md:text-4xl pt-8 pb-8">
+            Trending Pet Products
+        </h1>
+
+        <!-- card -->
+        <!-- parent card -->
+         <div>
+         <!-- left card -->
+
+            <div class=" gap-[20px] md:flex justify-between lg:flex">
+                <div class="relative rounded-xl flex gap-8 flex-col bg-orange-300 px-8 pt-[50px] mt-4">
+                    <p class="text-2xl">T-Shirt For Dogs</p>
+                    <p class="text-sm font-light w-2/3">Discover a world of treats, toys, and essentials handpicked for</p>
+                    <button class="bg-white px-1 py-2 w-[140px] rounded-lg my-24
+                            ">
+                        Shop Now
+                    </button>
+                    <div class="absolute right-0 bottom-10 w-2/4"><img src="c1-assets/cute-pet-small.png" alt=""></div>
+            
+                </div>
+
+            <!-- right card -->
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mt-2 gap-4">
+                
+                    <div class=" flex items-center gap-4 rounded-lg items-between bg-white px-4 py-4">
+                        <div class="bg-orange-100 justify-center px-2 py-2 rounded-lg"><img src="c1-assets/dog-cartoon.png" alt=""></div>
+                        <div>
+                            <img src="c1-assets/Frame 9.png" alt="">
+                            <p>Pet Bed</p>
+                            <p>$39.99</p>
+                        </div>
+                
+                
+                
+                
+                    </div>
+
+                    <div class=" flex  items-center gap-4 rounded-lg items-between bg-white px-4 py-4">
+                        <div class="bg-orange-100 px-2 py-2 rounded-lg"><img src="c1-assets/bird-cartoon.png" alt=""></div>
+                        <div>
+                            <img src="c1-assets/Frame 9.png" alt="">
+                            <p>Pet Bed</p>
+                            <p>$39.99</p>
+                        </div>
+                    
+                    </div>
+
+                    <div class=" flex  items-center gap-4 rounded-lg items-between bg-white px-4 py-4">
+                        <div class="bg-orange-100 px-2 py-2 rounded-lg"><img src="c1-assets/rabbit-cartoon.png" alt=""></div>
+                        <div>
+                            <img src="c1-assets/Frame 9.png" alt="">
+                            <p>Pet Bed</p>
+                            <p>$39.99</p>
+                        </div>
+                    
+                    </div>
+
+                    <div class=" flex  items-center gap-4 rounded-lg items-between bg-white px-4 py-4">
+                        <div class="bg-orange-100 px-2 py-2 rounded-lg"><img src="c1-assets/bird-cartoon.png" alt=""></div>
+                        <div>
+                            <img src="c1-assets/Frame 9.png" alt="">
+                            <p>Pet Bed</p>
+                            <p>$39.99</p>
+                        </div>
+                    
+                    </div>
+
+                    <div class=" flex  items-center gap-4 rounded-lg items-between bg-white px-4 py-4">
+                        <div class="bg-orange-100 px-2 py-2 rounded-lg"><img src="c1-assets/pet-couch.png" alt=""></div>
+                        <div>
+                            <img src="c1-assets/Frame 9.png" alt="">
+                            <p>Pet Bed</p>
+                            <p>$39.99</p>
+                        </div>
+                    
+                    </div>
+
+                    <div class=" flex  items-center gap-4 rounded-lg items-between bg-white px-4 py-4">
+                        <div class="bg-orange-100 px-2 py-2 rounded-lg"><img src="c1-assets/fish-cartoon.png" alt=""></div>
+                        <div>
+                            <img src="c1-assets/Frame 9.png" alt="">
+                            <p>Pet Bed</p>
+                            <p>$39.99</p>
+                        </div>
+                    
+                    </div>
+
+                    <div class=" flex  items-center gap-4 rounded-lg items-between bg-white px-4 py-4">
+                        <div class="bg-orange-100 px-2 py-2 rounded-lg"><img src="c1-assets/rabbit-cartoon.png" alt=""></div>
+                        <div>
+                            <img src="c1-assets/Frame 9.png" alt="">
+                            <p>Pet Bed</p>
+                            <p>$39.99</p>
+                        </div>
+                    
+                    </div>
+
+                    <div class=" flex  items-center gap-4 rounded-lg items-between bg-white px-4 py-4">
+                        <div class="bg-orange-100 px-2 py-2 rounded-lg"><img src="c1-assets/pet-couch.png" alt=""></div>
+                        <div>
+                            <img src="c1-assets/Frame 9.png" alt="">
+                            <p>Pet Bed</p>
+                            <p>$39.99</p>
+                        </div>
+                    
+                    </div>
+
+                    <div class="  hidden items-center lg:flex gap-4 rounded-lg items-between bg-white px-4 py-4">
+                        <div class="bg-orange-100 px-2 py-2 rounded-lg"><img src="c1-assets/rabbit-cartoon.png" alt=""></div>
+                        <div>
+                            <img src="c1-assets/Frame 9.png" alt="">
+                            <p>Pet Bed</p>
+                            <p>$39.99</p>
+                        </div>
+                    
+                    </div>
+
+                
+                </div>
+
+            
+            
+            </div>
+
+         </div>
+         
+
+
+        <!-- right Card -->
+
+        
+
+
+      </div>
+
+        <!-- low price -->
+      <div class="max-w-screen-xl mx-auto px-16 lg:px-28 pb-24 pt-16">
+        <h1 class="text-xl md:text-4xl pt-8 pb-8">
+            Everyday low price
+        </h1>
+
+        <div class=" gap-4 lg:flex gap-4 justify-between">
+            <!-- left-card -->
+            <div class="flex">
+                <div class=" flex  bg-gradient-to-r from-sky-300 to-indigo-600">
+                    <div class="pt-10 px-10 md:pt-20">
+                        <p class="hidden md:block text-xl ">Under Price</p>
+                        <div class="text-base md:text-3xl">Pet Grooming Mitt</div>
+                        <div class="hidden md:block text-white ">(Easy Hair Removal)</div>
+                        <p class="text-xl text-white md:text-5xl md:text-black">$7.99</p>
+                    </div>
+            
+                    <div>
+                        <img src="c1-assets/cute-dog-mid.png" alt="">
+            
+                    </div>
+                </div>
+            
+            </div>
+            
+            <!-- right card -->
+            <div class="flex mt-6 md:mt-0">
+                <div class=" flex bg-gradient-to-r from-purple-500 to-pink-500"">
+                            <div class=" pt-10 px-10 md:pt-20">
+            
+                    <div class="text-base md:text-3xl">T-Shirt For Dogs</div>
+                    <p class="text-xl text-white md:text-5xl md:text-black">$7.99</p>
+                </div>
+            
+                <div>
+                    <img src="c1-assets/cute-pet-mid.png" alt="">
+            
+                </div>
+            </div>
+            
+            </div>
+
+        </div>
+        
+
+       
+         
+
+        
+
+
+      </div>
+
+
+      <!-- extra section -->
+
+    <div class="max-w-screen-xl mx-auto px-16 lg:px-28 pb-24 pt-16">
+        <div
+            class=" bg-gradient-to-r from-orange-500 to-red-500 rounded-xl grid grid-cols-1 lg:grid-cols-2 text-white px-7 md:px-16 ">
+    
+            <!-- text section -->
+    
+            <div class="flex justify-center items-center overflow-hidden">
+    
+                <div class="w-5/6">
+                    <h1 class="text-2xl text-black font-bold mb-5 mt-10">A hadith states:
+                    "Cats are not impure. They intermingle with you." (Sunan Abu Dawood 75)</h1>
+                    <p class="mb-5 text-black">
+                        Prophet Muhammad (ﷺ) was kind to cats. There is a famous story about his cat, Muezza, who was sleeping on his robe.
+                        Instead of disturbing the cat, he cut his sleeve off when he needed to get up.
+                        The Prophet (ﷺ) encouraged treating animals with kindness and warned against mistreatment.
+                    </p>
+                    <button class="bg-white text-orange-700 px-3 py-2 rounded-lg">Show More about cat</button>
+                </div>
+    
+            </div>
+    
+    
+    
+            <!-- reviews card section -->
+            <div class="relative py-24">
+    
+                <!--middle card  -->
+    
+                <div class="absolute z-10 top-44 md:top-52">
+    
+                    <div class="h-56 w-full  md:w-3/4 bg-white text-black rounded-lg flex items-center px-5">
+                       
+    
+                        <div>
+                            <p class="text-gray-500 mb-5">
+                                "A woman was punished in Hell because she had imprisoned a cat until it died. She did not give it food or water, nor did
+                                she let it roam and eat from the insects of the earth."
+                               </p>
+                            <h1 class="font-bld">Sahih al-Bukhari 3318</h1>
+    
+                            <small class="font-bold text-gray-500">
+                                Sahih Muslim 2242
+    
+                            </small>
+                        </div>
+    
+    
+                    </div>
+    
+                </div>
+    
+                <!-- top card -->
+                <div
+                    class="relative left-8 md:left-32 h-56 w-full  md:w-3/4 bg-white text-black rounded-lg flex items-center px-5 opacity-40">
+                   
+    
+                    <div>
+                        <p class="text-gray-500 mb-5">"Cats are not impure. They intermingle with you."</p>
+                        <h1 class="font-bld">Sahih al-Bukhari 3318</h1>
+    
+                        <small class="font-bold text-gray-500">
+                            (Sunan Abu Dawood 75)
+    
+                        </small>
+                    </div>
+    
+    
+                </div>
+    
+    
+    
+    
+    
+    
+                <!-- bottom card -->
+    
+                <div
+                    class="relative left-8 md:left-32 h-56 top-10 w-full md:w-3/4 bg-white text-black rounded-lg flex items-center px-5 opacity-40">
+                    <div class="absolute -top-5 -left-5 bg-white text-black rounded-full">
+                        <img class="p-1" src="images/client.png" alt="">
+                    </div>
+    
+                    <div>
+                        <p class="text-gray-500 mb-5">We are providing the best and suitable home insurance services for the
+                            people who
+                            are interested to treatment</p>
+                        <h1 class="font-bld">Sahih al-Bukhari 3318</h1>
+    
+                        <small class="font-bold text-gray-500">
+                            (Sunan Abu Dawood 75)
+    
+                        </small>
+                    </div>
+    
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    
+    </div>
+
+
+
+      <!-- footer -->
+
+    <div class="footerContainer relative bg-[#FFDC26] flex flex-col items-center  justify-center mt-[250px] py-[100px]">
+        <div class="footerCard absolute mx-6 p-1 lg:w-4/5 bg-[#EFEBE3] rounded-3xl flex top-[-200px] justify-around">
+            <div class="w-[40%]">
+                <img src="c1-assets/cute-pet-mid.png" alt="" srcset="">
+            </div>
+            <div class="w-60% flex flex-col gap-5 justify-center items-center">
+                <div class="flex flex-col gap-5">
+                    <h1 class="text-3xl font-bold">
+                        Get Pawsome News!
+                    </h1>
+                    <h2 class="text-xl">
+                        Exclusive training tips, ticks, product deals and more.
+                    </h2>
+                    <input type="email" name="" id="" placeholder="Enter email..." class="rounded-xl p-2">
+                    <button class="bg-[#FFDC26] text-black p-3 text-xl rounded-2xl w-[170px]">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="footer flex flex-col lg:flex-row w-full lg:w-4/5 justify-between items-center mt-[100px] gap-5">
+            <div class="w-full p-3 lg:w-1/3">
+                <div class="flex gap-2 items-center">
+                    <img src="c1-assets/logo-footer.png" alt="" srcset="">
+                    <a class="text-xl  lg:flex">Browse<span class="text-orange-400">4</span>Pets</a>
+                </div>
+                <h1 class="text-black text-base">
+                    Discover a world of treats, toys, and essentials handpicked for your furry friends
+                </h1>
+            </div>
+            <div class="w-full p-3 lg:w-1/3 list-none flex   text-black font-bold text-base lg:justify-center">
+                <div class="flex flex-col gap-4 text-base">
+                    <li>Find a Pet</li>
+                    <li>Breeds</li>
+                    <li>Contact US</li>
+                </div>
+            </div>
+            <div class="w-full p-3 lg:w-1/3 flex lg:justify-end">
+                <div class="flex gap-4 flex-col">
+                    <h1 class="text-white text-2xl">Follow Us</h1>
+                    <div class="flex flex-row gap-5">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-square-youtube"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+    </main>
+
+   
